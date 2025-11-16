@@ -3,4 +3,6 @@ project(lab4)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(lab4 main.cpp)
+add_executable(lab4 main.cpp
+        Arithmetic.h
+        Arithmetic.cpp)
