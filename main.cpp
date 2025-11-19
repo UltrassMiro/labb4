@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// ---------- Event Handler ----------
+// Event Handler
 void OnOverflow(const Arithmetic* sender, const OverflowEventArgs& args) {
     cout << "\n=== OVERFLOW EVENT ===\n";
     cout << "Operation: " << args.operation << "\n";
@@ -14,7 +14,7 @@ void OnOverflow(const Arithmetic* sender, const OverflowEventArgs& args) {
     cout << "=======================\n\n";
 }
 
-// ---------- Function-like “delegate” ----------
+// Делегат
 int sum2D(const vector<vector<int>>& arr) {
     int sum = 0;
     for (auto& row : arr)
@@ -22,7 +22,7 @@ int sum2D(const vector<vector<int>>& arr) {
     return sum;
 }
 
-// ---------- Menu Interface ----------
+// Menu
 void menu() {
     cout << "=============================\n";
     cout << "     Arithmetic Program\n";
@@ -41,10 +41,10 @@ int main() {
 
     int choice;
 
-    // Delegate demonstration
+    // Делегат
     function<int(const vector<vector<int>>&)> sumDelegate;
 
-    // Assign lambda
+    // Лямбда
     sumDelegate = [](const vector<vector<int>>& arr) {
         int s = 0;
         for (auto& row : arr)
@@ -62,7 +62,7 @@ int main() {
             vector<vector<int>> arr = {{1, 2}, {3, 4}};
             cout << "Sum by lambda: " << sumDelegate(arr) << "\n";
 
-            // Anonymous function
+            // Анонімний клас (лямбда)
             sumDelegate = function<int(const vector<vector<int>>&)>{
                 [](const vector<vector<int>>& a) {
                     int s = 0;

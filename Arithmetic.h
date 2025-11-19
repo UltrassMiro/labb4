@@ -6,14 +6,14 @@
 
 using namespace std;
 
-// ---------- EventArgs ----------
+// EventArgs
 struct OverflowEventArgs {
     int a, b;
     long long result;
     string operation;
 };
 
-// ---------- Interface ----------
+// Interface
 class IArithmetic {
 public:
     virtual int Add(int a, int b) = 0;
@@ -22,7 +22,6 @@ public:
     virtual ~IArithmetic() {}
 };
 
-// ---------- Class with event ----------
 class Arithmetic : public IArithmetic {
 public:
     function<void(const Arithmetic*, const OverflowEventArgs&)> Overflow;
